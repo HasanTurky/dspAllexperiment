@@ -7,8 +7,8 @@ x = [1 2 2 1];
 L = length(x);
 M = length(h);
 N = L+M-1;
-x = [x zeros(1,M-1)];
-h = [h zeros(1,L-1)];
+x_pad = [x zeros(1,M-1)];
+h_pad = [h zeros(1,L-1)];
 n = 0 : N-1;
 %% using matrix method
 A = zeros(N,M);
@@ -20,5 +20,13 @@ for i = 1 : M
     A( : ,i ) = circshift2(x,i-1,N);
 end
 result_mat = A*h';
-subplot
+subplot(211), stem(n,result_mat,'linewidth',3),title("result by matrix method")
+
+%% using dft
+
+x_dft = zeros(1,length(x_pad));
+h_dft = zeros(1,lenght(h_pad));
+
+mtx = dftmtx(N);
+
 
