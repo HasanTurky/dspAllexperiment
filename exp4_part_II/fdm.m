@@ -2,7 +2,7 @@ clc
 clear all
 close all
 fs = 2000;
-ts = 1/2000;
+ts = 1/fs;
 fc1 = 250;
 fc2 = 750;
 to = .1

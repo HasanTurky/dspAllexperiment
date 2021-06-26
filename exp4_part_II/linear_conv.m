@@ -2,7 +2,7 @@ clc
 clear all
 close all
 
-h = [1 2 3];
+h = [1 2 3 4];
 x = [1 2 2 1];
 L = length(x);
 M = length(h);

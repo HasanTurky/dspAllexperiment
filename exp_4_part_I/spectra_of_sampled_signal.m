@@ -7,7 +7,7 @@ s = 1;
 % q = [ 2 ];
 for l = 1 : length(q) 
     fs = q(l)*BW;
-    t_o = .13;
+    t_o = .1;
     ts = 1/fs;
     n = -round(t_o/ts) : round(t_o/ts);
     t = n*ts ;
@@ -20,7 +20,7 @@ for l = 1 : length(q)
     nk = n' * k;
     w = wn .^ nk;
     M = m*w;
-    subplot(length(q),2,s),plot(fn,abs(fftshift(M)),0,0,'linewidth',1.5),grid on,grid minor,title(sprintf("%dBW",q(l)));
+    subplot(length(q),2,s),plot(fn,abs(fftshift(M)),0,0,'linewidth',1.5),grid on,grid minor,title(sprintf("%.02fBW",q(l)));
     s = s+1;
     subplot(length(q),2,s), stem(t,m,'linewidth',1.5),title(sprintf("sampled signal with FS = %dHz",fs));
     s = s+1;
